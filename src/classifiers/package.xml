@@ -1,0 +1,17 @@
+<package>
+  <name>classifiers</name>
+  <version>0.0.0</version>
+  <description>The classifiers package</description>
+  <maintainer email="eacappo@cmu.edu">Ellen Cappo</maintainer>
+  <maintainer email="johnyao@cmu.edu">John Yao</maintainer>
+  <maintainer email="rajeswar@cmu.edu">Vishnu Desaraju</maintainer>
+  <license>CRAPL</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+
+</package>
