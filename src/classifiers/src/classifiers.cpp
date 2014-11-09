@@ -17,13 +17,10 @@ int main (int argc, char **argv)
   dataio.initialize(n);
 
   std::vector<DataIO::pc_data_t> d;
-  dataio.loadData("/home/vishnu/Documents/RoboStats/robostats_lab2/data/oakland_part3_am_rf.node_features",d);
-
-//   for (unsigned int i = 0; i<d.size(); i++)
-//     d[i].print();
-
-  dataio.visualize(d);
-  
+  dataio.loadData(d);
+  // TODO: call classifier on d
+  dataio.visualize(d, true);  // Change to false to show predicted labels instead
+    
   ros::spin();
 
   return 0;

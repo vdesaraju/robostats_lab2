@@ -3,6 +3,8 @@ project(classifiers)
 
 find_package(Armadillo REQUIRED)
 
+find_package(PCL 1.5 REQUIRED visualization)
+
 find_package(catkin REQUIRED COMPONENTS
       roscpp
 )
@@ -19,16 +21,19 @@ catkin_package(
 include_directories(include
       ${catkin_INCLUDE_DIRS}
       ${ARMADILLO_INCLUDE_DIRS}
+      ${PCL_INCLUDE_DIRS}
 )
 
 link_directories(
       ${catkin_LIBRARY_DIRS}
       ${ARMADILLO_LIBRARY_DIRS}
+      ${PCL_LIBRARY_DIRS}
 )
 
 add_definitions(
   ${catkin_DEFINITIONS}
   ${ARMADILLO_DEFINITIONS}
+  ${PCL_DEFINITIONS}
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -44,6 +49,7 @@ add_library(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
       ${catkin_LIBRARIES}
       ${ARMADILLO_LIBRARIES}
+      ${PCL_LIBRARIES}
 )
 
 add_executable(${PROJECT_NAME}_node

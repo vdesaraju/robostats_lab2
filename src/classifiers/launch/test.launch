@@ -1,20 +1,13 @@
 <launch>
   <param name="use_sim_time" value="false"/>
 
-  <node name="rviz"
-  pkg="rviz"
-  type="rviz"
-  output="screen"
-  args="-d $(find classifiers)/vis/test.rviz"
-  launch-prefix="optirun"/>
-
   <node pkg="classifiers"
   name="classifiers"
   type="classifiers"
   output="screen"
-  required="false"/>
-
-  <!-- Classifier Parameters -->
-  <rosparam file="$(find classifiers)/config/parameters.yaml"/>
-
+  required="false">
+    <param name="datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
+    <param name="algorithm" value="winnow"/>
+    <param name="frame_id/fixed" value="world"/>
+  </node>
 </launch>
