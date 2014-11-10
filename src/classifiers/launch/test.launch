@@ -6,8 +6,10 @@
   type="classifiers"
   output="screen"
   required="false">
-    <param name="datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
-    <param name="algorithm" value="winnow"/>
     <param name="frame_id/fixed" value="world"/>
+    <param name="datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
+    <param name="predicted_datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
+    <param name="algorithm" value="winnow"/>
+    <param name="winnow/train_ratio" value="0.9"/>
   </node>
 </launch>
