@@ -1,0 +1,16 @@
+<launch>
+  <param name="use_sim_time" value="false"/>
+  <arg name="class" default="Ground"/>
+  <arg name="ds" default="m"/>
+
+  <node pkg="classifiers"
+  name="classifiers"
+  type="classifiers"
+  output="screen"
+  required="false">
+    <param name="predicted_datafilename" value="$(find classifiers)/data/blr_a$(arg ds)_$(arg class)_test_results.txt"/>
+    <param name="datafilename" value="$(find classifiers)/data/oakland_part3_a$(arg ds)_rf.node_features"/>
+    <param name="algorithm" value="blr"/>
+    <param name="frame_id/fixed" value="world"/>
+  </node>
+</launch>
