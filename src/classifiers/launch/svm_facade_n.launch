@@ -1,0 +1,15 @@
+<launch>
+  <param name="use_sim_time" value="false"/>
+
+  <node pkg="classifiers"
+  name="classifiers"
+  type="classifiers"
+  output="screen"
+  required="false">
+    <param name="frame_id/fixed" value="world"/>
+    <param name="datafilename" value="$(find classifiers)/data/oakland_part3_an_rf.node_features"/>
+    <param name="predicted_datafilename" value="$(find classifiers)/data/svm_facade_n.node_features"/>
+    <param name="algorithm" value="svm"/>
+    <param name="svm/train_ratio" value="0.9"/>
+  </node>
+</launch>

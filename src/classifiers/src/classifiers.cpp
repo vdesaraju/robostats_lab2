@@ -51,7 +51,16 @@ int main (int argc, char **argv)
   }
   else if (algorithm=="svm")
   {
-    cout << "add svm code here" << endl;
+    cout << "some svm code... here..." << endl;
+    // dataio.visualize(d); // Visualize truth data
+ 
+    // Example of how to load from predicted_datafilename (just call loadData with 'false')
+    std::vector<DataIO::pc_data_t> d_pred;
+    dataio.loadData(d_pred, false);
+    // dataio.visualize(d_pred, false); // Visualize prediction data
+
+    dataio.visualize(d, d_pred);  // Visualize truth and prediction data
+
   }
   else
     cout << "Invalid algorithm: " << algorithm << endl;
