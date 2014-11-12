@@ -139,6 +139,7 @@ figure()
     hold on
 
 %% testing on whole data set
+%{
 running_tally = zeros(1,4);
 
 for i = 1:length(A.node_label)
@@ -162,7 +163,7 @@ end
 
 display(['on all data:     ' num2str(running_tally) '    % = ' ...
      num2str(100*(running_tally(1)+running_tally(4))/sum(running_tally)) ])    
-
+%}
 %% testing on testing set
 running_tally = zeros(1,4);
 
