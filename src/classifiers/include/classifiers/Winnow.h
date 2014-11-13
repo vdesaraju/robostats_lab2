@@ -13,7 +13,6 @@
 
 #include <classifiers/DataIO.h>
 
-
 class Winnow
 {
 public:
@@ -32,11 +31,19 @@ private:
 
   double train_ratio;
   unsigned int train_end_idx;
+  double feature_thresh;
+  double pred_thresh;
+  double alpha;
+  
   std::vector<DataIO::pc_data_t> data;
   std::vector<DataIO::pc_data_t> data_tested;
-  arma::mat::fixed<5,10> weights;
-  arma::vec::fixed<10> maxfinv;
+  arma::mat::fixed<5,NUM_FEATURES> weights;
+  arma::vec::fixed<NUM_FEATURES> maxf;
+  arma::vec::fixed<NUM_FEATURES> minf;
 
+  arma::vec::fixed<5> maxwtf;
+  arma::vec::fixed<5> minwtf;
+  
   bool loadParameters(const ros::NodeHandle& n);
 
   void computeMaxf(std::vector<DataIO::pc_data_t>& d);

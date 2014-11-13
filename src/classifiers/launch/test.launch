@@ -8,8 +8,12 @@
   required="false">
     <param name="frame_id/fixed" value="world"/>
     <param name="datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
+<!--     <param name="datafilename" value="$(find classifiers)/data/oakland_part3_an_rf.node_features"/> -->
     <param name="predicted_datafilename" value="$(find classifiers)/data/oakland_part3_am_rf.node_features"/>
     <param name="algorithm" value="winnow"/>
-    <param name="winnow/train_ratio" value="0.9"/>
+    <param name="winnow/train_ratio" value="-0.90"/>
+    <param name="winnow/feature_thresh" value="0.3"/>
+    <param name="winnow/pred_thresh" value="6.0"/>
+    <param name="winnow/alpha" value="1.6"/>
   </node>
 </launch>

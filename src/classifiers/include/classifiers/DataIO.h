@@ -25,6 +25,8 @@
 #include <pcl/visualization/pcl_visualizer.h>
 #include <pcl/console/parse.h>
 
+#define NUM_FEATURES 20
+
 class DataIO
 {
 public:
@@ -34,7 +36,7 @@ public:
     arma::vec3 position;
     unsigned int node_id;
     unsigned int node_label;
-    arma::vec::fixed<10> features;
+    arma::vec::fixed<NUM_FEATURES> features;
     unsigned int predicted_label;
     void print() const
     {
@@ -103,7 +105,7 @@ public:
         else
           datafile >> d_new.predicted_label;
         
-        for (unsigned int i = 0; i < 10; i++)
+        for (unsigned int i = 0; i < NUM_FEATURES; i++)
           datafile >> d_new.features(i);
 
         d.push_back(d_new);
